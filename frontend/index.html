@@ -4,20 +4,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>OrganizeMe</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
         <link rel = "stylesheet" href = "styles.css">
     </head>
     <body>
-        <div id = "loginPage"> 
-            <h1>Sign in</h1>
-            <form id="signInForm" action="/login">
-                <label for ="username">Username:</label>
-                <input type = "text" id = "username">
-                <label for ="password">Password:</label>
-                <input type = "text" id = "password">
-                <button type = "button" id = "signIn" onclick = "">
+        <div class="loginPage"> 
+            <h1>Welcome to OrganizeMe</h1>
+            <form action="" id="signInForm" action="/login">
+
+                <div class="inputBox">
+                    <input type = "text" placeholder="Username" id = "username" autocomplete="off" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="inputBox">
+                    <input type = "password" placeholder="Password" id = "password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                
+                
+                <div class="forgot">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type = "submit" id = "signInButton" onclick = "">
                     Sign In
                 </button>
-                <p><a href="#">Forgot Password?</a></p>
             </form>
         </div>
         <script src="script.js"></script>
