@@ -3,12 +3,15 @@ import json
 api_key = '40f86ac620f5f658e4fd0c4cee27423a'
 
 def needInput(userInput):
+    print(userInput)
     user_location = userInput
     return giveOutput(user_location)
 
 def giveOutput(location):
     weather_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?q={location}&units=metric&APPID={api_key}")
+    
+    print(weather_data)
 
     if weather_data.status_code != 200:
         print("Error:", weather_data.json())
@@ -22,8 +25,12 @@ def giveOutput(location):
                 "Weather": weather,
                 "Temperature": temp
             }
+            
+            print(dict)
 
-            return json.dump(dict)
+            json_data = json.dumps(dict)
+
+            return json_data
         except KeyError as e:
             print("Error: KeyError -", e)
             print("Full response:", weather_data.json())

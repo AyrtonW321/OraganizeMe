@@ -16,12 +16,13 @@ function fetchAPIs(modulePara, input){
             throw new Error('Network response was not ok');
         }
         // get response and store it in local storage
-        console.log(response)
-        localStorage.setItem(parent[modulePara], response.json())
+        return response.json()
     })
     .then(data => {
         // Handle JSON data
         console.log(data);
+        localStorage.setItem(input, data)
+    
     })
     .catch(error => {
         console.error('Error:', error);
@@ -69,9 +70,9 @@ const userLocation = document.getElementById('weather');
 
 
 function findweatheroflocation(){
-    console.log('a')
     const city = userLocation.value.trim();
     fetchAPIs('weather', city);
+
 }
 
 
