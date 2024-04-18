@@ -1,6 +1,10 @@
 'use strict'
 
+const form = document.querySelector('form');
+
 const usernameInput = document.getElementById('username');
+const firstNameInput = document.getElementById('firstName');
+const lastNameInput = document.getElementById('lastName');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const termsCheckbox = document.getElementById('check');
