@@ -12,31 +12,23 @@
 
     <body>
         <div class="container">
-            <form action="login.php" method="post">
+            <form action="#" method="post">
                 <h1>Registration</h1>
                 <input type="hidden" name="form_id" value="registration">
                 <div class="inputBox">
                     <div class="input">
-                        <input type="text" placeholder="First Name" id="firstName" required>
+                        <input type="text" placeholder="Username" id="username" autocomplete="off" required>
                         <i class='bx bxs-user'></i>
                     </div>
                     <div class="input">
-                        <input type="text" placeholder="Last Name" id="lastName" required>
-                        <i class='bx bxs-user'></i>
-                    </div>
-                    <div class="input">
-                        <input type="email" placeholder="Email" id="email" required>
+                        <input type="email" placeholder="Email" id="email" autocomplete="off" required>
                         <i class='bx bxs-envelope'></i>
                     </div>
                     <div class="input">
-                        <input type="password" placeholder="Password" id="password" required>
+                        <input type="password" placeholder="Password" id="password" autocomplete="off" required>
                         <i class='bx bxs-lock-alt'></i>
                     </div>
                 </div>
-
-                <label>
-                    <input type="checkbox">By proceeding, I accept the terms and conditions.
-                </label>
 
                 <button type="submit" class="btn" id="check">
                     Register

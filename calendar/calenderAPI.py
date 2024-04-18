@@ -10,12 +10,8 @@ from googleapiclient.errors import HttpError
 # If modifying these scopes, delete the file token.json.
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
-
-def googleCalendar(event):
+def giveOutput():
   creds = None
-  # The file token.json stores the user's access and refresh tokens, and is
-  # created automatically when the authorization flow completes for the first
-  # time.
   if os.path.exists("token.json"):
     creds = Credentials.from_authorized_user_file("token.json", SCOPES)
   # If there are no (valid) credentials available, let the user log in.
@@ -35,7 +31,7 @@ def googleCalendar(event):
     service = build("calendar", "v3", credentials=creds)
 
     # Call the Calendar API
-    now = datetime.datetime.utcnow().isoformat() + "Z"  # 'Z' indicates UTC time
+    now = datetime.datetime.utcnow().isoformat() + "Z"
 
     # Grabs the top 10 events
     events_result = (
@@ -60,10 +56,45 @@ def googleCalendar(event):
       start = event["start"].get("dateTime", event[start].get("date"))
       print(start, event["summary"])
 
-    # Adds events to the calendar
-    #event = { insert summary, description, start, end}
-    #event = service.events().insert(calendarId = 'primary', body=event).execute()
-    #print('Event created: %s' % (event.get('htmlLink')))
+  except HttpError as error:
+    print(f"An error occurred: {error}")
 
+def needInput():
+  creds = None
+  if os.path.exists("token.json"):
+    creds = Credentials.from_authorized_user_file("token.json", SCOPES)
+  # If there are no (valid) credentials available, let the user log in.
+  if not creds or not creds.valid:
+    if creds and creds.expired and creds.refresh_token:
+      creds.refresh(Request())
+    else:
+      flow = InstalledAppFlow.from_client_secrets_file(
+          "credentials.json", SCOPES
+      )
+      creds = flow.run_local_server(port=0)
+    # Save the credentials for the next run
+    with open("token.json", "w") as token:
+      token.write(creds.to_json())
+
+  try:
+    service = build("calendar", "v3", credentials=creds)
+
+    # Adds events to the calendar
+    event = {
+      'summary': '',
+      'location': '',
+      'description': '',
+      'start': {
+        'dateTime': '',
+        'timeZone': '',
+      },
+      'end': {
+        'dateTime': '',
+        'timeZone': '',
+      }
+    }
+    event = service.events().insert(calendarId = 'primary', body=event).execute()
+    print('Event created: %s' % (event.get('htmlLink')))
+  
   except HttpError as error:
     print(f"An error occurred: {error}")
