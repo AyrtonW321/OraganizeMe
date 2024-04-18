@@ -1,5 +1,5 @@
 <?php
-	$firstName = $_POST['username'];
+	$username = $_POST['username'];
 	$password = $_POST['password'];
 
 	// Database connection
