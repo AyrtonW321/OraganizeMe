@@ -1,7 +1,5 @@
 'use strict'
 
-const form = document.querySelector('form');
-
 const usernameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
@@ -10,6 +8,8 @@ const submitButton = document.getElementById('submitButton');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    
+    console.log('Information Submitted')
 
     const username = usernameInput.value.trim();
     const email = emailInput.value.trim();
