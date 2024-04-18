@@ -9,6 +9,7 @@ def callmodule(moduleNeeded, input):
     actualmod = supportedapis.modules[moduleNeeded]
     entry_point = getattr(actualmod, 'needInput')
 
+    print('test')
 
     try: 
         module = importlib.import_module(actualmod)

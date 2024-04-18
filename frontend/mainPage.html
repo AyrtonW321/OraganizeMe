@@ -6,10 +6,10 @@
         <title>OrganizeMe</title>
         <link rel="stylesheet" href="mainPage.css">
     </head>
-    <body>
+    <body onload="startAPIs();">
         <div class="container">
             <div class="navBar">
-                <img src="/images/logo.png" class="logo">
+                <img src="/images/logo.png" class="logo" alt="logo">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Wallet</a></li>
@@ -19,10 +19,6 @@
                 </ul>
             </div>
         </div>
-
-        <script>
-            //$SCRIPT_ROOT = {{ request.script_root|tojson }};
-        </script>
         <script src = "applicationrequests.js"></script>
     </body>
 </html>
