@@ -8,7 +8,7 @@ function startAPIs(){
             throw new Error('Network response was not ok');
         }
         // Parse JSON response
-        return response.text();
+        return response.json();
     })
     .then(data => {
         // Handle JSON data
