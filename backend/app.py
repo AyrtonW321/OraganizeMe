@@ -9,11 +9,8 @@ CORS(app)
 
 @app.route('/data')
 def get_data():
-    print('hi')
     module = request.args.get('module')
-    print(module)
     input_value = request.args.get('input')
-    print(input_value)
     data = dataAPICollector.callmodule(module, input_value)
     if data is None:
         # Return a 404 error response if data is not found

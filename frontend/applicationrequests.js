@@ -16,12 +16,13 @@ function fetchAPIs(modulePara, input) {
             throw new Error('Network response was not ok');
         }
         // get response and store it in local storage
-        console.log(response)
-        localStorage.setItem(parent[modulePara], response.json())
+
+        return response.json()
     })
     .then(data => {
         // Handle JSON data
         console.log(data);
+        localStorage.setItem(input, data)
     })
     .catch(error => {
         console.error('Error:', error);
@@ -66,12 +67,19 @@ function updateTime() {
 }
 
 const userLocation = document.getElementById('weather');
+const cityDisplay = document.querySelector('.city')
+const weatherDisplay = document.querySelector('.displayWeather');
 
-
-function findweatheroflocation(){
-    console.log('a')
+function findweatheroflocation() {
     const city = userLocation.value.trim();
     fetchAPIs('weather', city);
+
+    cityDisplay.textContent = localStorage.getItem(city);
+
+    weather = localStorage.getItem(weather);
+    celsius = localStorage.getItem(temperature);
+
+    weatherDisplay.textContent = weather + "    " + temperature + "Â°C";
 
 }
 
@@ -80,7 +88,6 @@ const userPrompt = document.getElementById('calender');
 
 
 function calender() {
-    console.log('b')
     const prompt = userPrompt.value.trim();
     fetchAPIs('calender', prompt)
 }
@@ -99,10 +106,84 @@ document.getElementById("timeline").addEventListener("click", () => {
 });
 
 document.getElementById("dashboard").addEventListener("click", () => {
-    displays.style.display = "flex"; 
+    displays.style.display = "flex";
     clock.style.display = "flex";
     timelinePage.hidden = true;
-    
+
 });
 
 timelinePage.hidden = true;
+
+const tasksContainer = document.getElementById('tasks-container');
+const newTaskInput = document.getElementById('new-task');
+const addButton = document.getElementById('add-btn');
+
+let tasks = []; // Array to store tasks
+
+// Load tasks from localStorage (optional)
+const savedTasks = localStorage.getItem('tasks');
+if (savedTasks) {
+    tasks = JSON.parse(savedTasks); // Parse tasks from JSON string
+    renderTasks();
+}
+
+function renderTasks() {
+    tasksContainer.innerHTML = ''; // Clear existing tasks
+
+    tasks.forEach((task, index) => {
+        const taskItem = document.createElement('li');
+        taskItem.classList.add('task-item');
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `task-${index}`;
+        checkbox.checked = task.completed; // Set checkbox state based on task completion
+
+        const label = document.createElement('label');
+        label.htmlFor = `task-${index}`;
+        label.textContent = task.text;
+        label.classList.add(task.completed ? 'completed' : ''); // Apply "completed" class if task is done
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'X';
+        deleteButton.addEventListener('click', () => {
+            removeTask(index);
+        });
+
+        taskItem.appendChild(checkbox);
+        taskItem.appendChild(label);
+        taskItem.appendChild(deleteButton);
+
+        tasksContainer.appendChild(taskItem);
+
+        // Add event listener to checkbox for task completion
+        checkbox.addEventListener('change', () => {
+            toggleTaskCompletion(index);
+        });
+    });
+}
+
+function addTask() {
+    const newTaskText = newTaskInput.value.trim(); // Trim whitespace
+    if (!newTaskText) return; // Don't add empty tasks
+
+    const newTask = {
+        text: newTaskText,
+        completed: false,
+    };
+
+    tasks.push(newTask);
+    renderTasks();
+    newTaskInput.value = ''; // Clear input field after adding task
+
+    // Save tasks to localStorage (optional)
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function removeTask(index) {
+    tasks.splice(index, 1); // Remove the task at the specified index
+    renderTasks(); // Update the UI by re-rendering the task list
+
+    // Save tasks to localStorage (optional)
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}

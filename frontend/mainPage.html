@@ -41,13 +41,23 @@
                 <input type="text" id="weather" placeholder="Location (City, Country)">
                 <button type="submit" id="enter" onclick="findweatheroflocation()">Enter</button>
             </div>
-            
-            <div class = "displayWeatherResult" id = "displayWeatherResult">
-                <div class = ""></div>
+
+            <div class="displayWeatherResult" id="displayWeatherResult">
+                <div class="cityResult">
+                    <h1 class="city"></h1>
+                </div>
+                <div class="weatherResult">
+                    <h3 class = "displayWeather"></h3>
+                </div>
             </div>
-            <div class = "toDoDisplay">
-                <h1>To Do List:</h1>
-                <form></form>
+            <div class="toDoDisplay">
+                <h1>My To-Do List</h1>
+                <div id="tasks-container">
+                </div>
+                <div id="add-task">
+                    <input type="text" id="new-task" placeholder="Enter new task" autocomplete="off">
+                    <button id="add-btn">Add Task</button>
+                </div>
             </div>
             <div class="calendarDisplay">
                 <label for="calender">Enter Prompt for Calendar: </label>
@@ -56,105 +66,105 @@
             </div>
         </div>
 
-        <div class = "timeline-page" id="timelinePage">
-            <div class = "left-container">
+        <div class="timeline-page" id="timelinePage">
+            <div class="left-container">
                 <h1>Welcome to your</h1>
                 <h1>Timeline</h1>
-                <button type = "button" id = "backButton" class = "backButton">
+                <button type="button" id="backButton" class="backButton">
                     Exit
                 </button>
             </div>
-            <div class = "timeline">
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+            <div class="timeline">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>0</h2>
                         </div>
-    
+
                         <p>You are born.</p>
                     </div>
                 </div>
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>10</h2>
                         </div>
-                        <input type = "checkbox" id = "bike" name = "bike">
-                        <label for = "bike">Learn how to Bike</label>
+                        <input type="checkbox" id="bike" name="bike">
+                        <label for="bike">Learn how to Bike</label>
                         <p></p>
-                        <input type = "checkbox" id = "swim" name = "swim">
-                        <label for = "swim">Learn how to Swim</label>
+                        <input type="checkbox" id="swim" name="swim">
+                        <label for="swim">Learn how to Swim</label>
                     </div>
                 </div>
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>14</h2>
                         </div>
-                        <input type = "checkbox" id = "graduateElementary" name = "graduateElementary">
-                        <label for = "graduateElementary">Graduate Elementary</label>
+                        <input type="checkbox" id="graduateElementary" name="graduateElementary">
+                        <label for="graduateElementary">Graduate Elementary</label>
                     </div>
                 </div>
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>16</h2>
                         </div>
-                        <input type = "checkbox" id = "driversLicenseG1" name = "driversLicenseG1">
-                        <label for = "driversLicenseG1">Get G1</label>
+                        <input type="checkbox" id="driversLicenseG1" name="driversLicenseG1">
+                        <label for="driversLicenseG1">Get G1</label>
                         <p></p>
-                        <input type = "checkbox" id = "firstJob" name = "firstJob">
-                        <label for = "firstJob">Get your first job</label>
+                        <input type="checkbox" id="firstJob" name="firstJob">
+                        <label for="firstJob">Get your first job</label>
                         <p></p>
-                        <input type = "checkbox" id = "firstHackathon" name = "firstHackathon">
-                        <label for = "firstHackathon">Participate in your first Hackathon</label>
+                        <input type="checkbox" id="firstHackathon" name="firstHackathon">
+                        <label for="firstHackathon">Participate in your first Hackathon</label>
                     </div>
                 </div>
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>19</h2>
                         </div>
-                        <input type = "checkbox" id = "driversLicense" name = "driversLicense">
-                        <label for = "driversLicense">Get Drivers License</label>
+                        <input type="checkbox" id="driversLicense" name="driversLicense">
+                        <label for="driversLicense">Get Drivers License</label>
                         <p></p>
-                        <input type = "checkbox" id = "attendIntoUniCollege" name = "attendIntoUniCollege">
-                        <label for = "attendIntoUniCollege">Attend Into University</label>
+                        <input type="checkbox" id="attendIntoUniCollege" name="attendIntoUniCollege">
+                        <label for="attendIntoUniCollege">Attend Into University</label>
                     </div>
                 </div>
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>24</h2>
                         </div>
-                        <input type = "checkbox" id = "graduateUniversity" name = "graduateUniversity">
-                        <label for = "graduateUniversity">Graduate University</label>
+                        <input type="checkbox" id="graduateUniversity" name="graduateUniversity">
+                        <label for="graduateUniversity">Graduate University</label>
                     </div>
                 </div>
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>30</h2>
                         </div>
-                        <input type = "checkbox" id = "married" name = "married">
-                        <label for = "married">Get Married</label>
+                        <input type="checkbox" id="married" name="married">
+                        <label for="married">Get Married</label>
                         <p></p>
-                        <input type = "checkbox" id = "firstHouse" name = "firstHouse">
-                        <label for = "firstHouse">Get your first house</label>
+                        <input type="checkbox" id="firstHouse" name="firstHouse">
+                        <label for="firstHouse">Get your first house</label>
                     </div>
                 </div>
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>65</h2>
                         </div>
-                        <input type = "checkbox" id = "retire" name = "retire">
-                        <label for = "retire">Retire</label>
+                        <input type="checkbox" id="retire" name="retire">
+                        <label for="retire">Retire</label>
                     </div>
                 </div>
-                <div class = "right-container">
-                    <div class = "text-box">
-                        <div class = "circle">
+                <div class="right-container">
+                    <div class="text-box">
+                        <div class="circle">
                             <h2>100</h2>
                         </div>
                         <p>You are probably dead by then.</p>
