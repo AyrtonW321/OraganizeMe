@@ -10,13 +10,13 @@ Pink: #e65e8b
     padding: 0;
     font-family: Montserrat,sans-serif;
 }
-/* change this */
+
 .container{
     width: 100%;
     height: 100vh;
-    background-color: #dedede;
+    background-color: #FFFAFA;
 }
-/* change this  */
+
 .navBar{
     width: 100%;
     margin: auto;
