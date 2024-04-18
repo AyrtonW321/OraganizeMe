@@ -5,53 +5,6 @@ const form = document.querySelector('form');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 
-const timeOutput = document.querySelector('.time');
-const secOutput = document.querySelector('.sec');
-const ampmOutput = document.querySelector('.ampm');
-const monthOutput = document.querySelector('.month');
-const dayOfWeekOutput = document.querySelector('.dayOfWeek');
-const dayOutput = document.querySelector('.day');
-
-const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-];
-
-const monthName = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-];
-
-function formatTime(val){
-    if (val < 10){
-        return "0";
-    } else {
-        return "";
-    }
-}
-
-function clock(){
-    const date = new Date();
-    const hours = d.getHours();
-    const seconds = d.getSeconds();
-
-    dayOfWeekOutput.innerHTML = weekday[
-        date.getDay()
-    ];
-
-    monthOutput.innerHTML = monthName[
-        d.getMonth()
-    ];
-
-    dayOutput.innerHTML = d.getDate();
-
-    
-}
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     // check local storage / database

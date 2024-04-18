@@ -7,8 +7,17 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-# If modifying these scopes, delete the file token.json.
+from openai import OpenAI
+import json
+
+# Enable Google Calendar API
+# Create OAuth
+
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
+
+client = OpenAI(
+    api_key = "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"
+)
 
 def giveOutput():
   creds = None
@@ -48,7 +57,20 @@ def giveOutput():
   except HttpError as error:
     print(f"An error occurred: {error}")
 
-def needInput(event):
+def needInput(text):
+  now = datetime.now()
+
+  completion = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+      {"role": "system", "content": "You are google calendar, format the information inputted to be like this {'summary: title', 'start: {dateTime, timeZone}', 'end: {dateTime, timeZone'}}. If no end time is given, give an approximation on how long you think it will take and make end time equal to start time plus that approximation. For timezone, it will always be America/Toronto. Give the date and time in RCF 3339 format."},
+      {"role": "user", "content": text + " and the current date is " + now.strftime("%B %d, %Y") + " and the current time is " + now.strftime("%H:%M")}
+    ]
+  )
+  json_object = json.loads(completion.choices[0].message.content.replace("'", '"'))
+  createEvent(json_object)
+
+def createEvent(event):
   creds = None
   if os.path.exists("token.json"):
     creds = Credentials.from_authorized_user_file("token.json", SCOPES)
@@ -74,23 +96,3 @@ def needInput(event):
   
   except HttpError as error:
     print(f"An error occurred: {error}")
-
-
-#Example input format
-event = {
-      'summary': 'Hackathon',
-      'description': 'Hackathon',
-      'start': {
-        'dateTime': '2024-04-18T12:30:00Z',
-        'timeZone': 'America/Toronto',
-      },
-      'end': {
-        'dateTime': '2024-04-18T13:30:00Z',
-        'timeZone': 'America/Toronto',
-      }
-    }
-
-giveOutput()
-
-# Enable Google Calendar API
-# Create OAuth

@@ -6,18 +6,19 @@
         <title>OrganizeMe</title>
         <link rel="stylesheet" href="mainPage.css">
     </head>
-    <body onload="startAPIs();">
+    <body>
         <div class="container">
             <img src="/images/logo.png" class="logo" alt="logo">
             <div class="navBar">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
                     <li><a href="#">Wallet</a></li>
                     <li><a href="#">My Calendar</a></li>
                     <li><a href="#">My Wellness</a></li>
                     <li><a href="#">My Account</a></li>
                 </ul>
             </div>
+        
             <div class="clock">
                 <div class="main">
                     <h1 class="time">08:37</h1>
@@ -32,8 +33,17 @@
                     </h2>
                 </div>
             </div>
+
+            <label for="weather">Enter Location (City, Country): </label>
+            <input type="text" id="weather" placeholder="Location">
+            <button type="submit" class="btn" id="enter" onclick="findweatheroflocation()">Enter</button>
+
+            <label for = "calender">Enter Prompt for Calendar: </label>
+            <input type = "text" id = "calender" placeholder = "Ex: I have a doctors appointment in one hour">
+            <button type = "submit" id = "submit" onclick = "">Submit Prompt</button>
         </div>
         
         <script src = "applicationrequests.js"></script>
+        
     </body>
 </html>

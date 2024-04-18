@@ -2,12 +2,13 @@ import requests
 import json
 api_key = '40f86ac620f5f658e4fd0c4cee27423a'
 
-user_input = ""
+def needInput(userInput):
+    user_location = userInput
+    return giveOutput(user_location)
 
-
-def giveOutput():
+def giveOutput(location):
     weather_data = requests.get(
-        f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=metric&APPID={api_key}")
+        f"https://api.openweathermap.org/data/2.5/weather?q={location}&units=metric&APPID={api_key}")
 
     if weather_data.status_code != 200:
         print("Error:", weather_data.json())
@@ -17,7 +18,7 @@ def giveOutput():
             temp = round(weather_data.json()['main']['temp'])
 
             dict = {
-                "City": user_input,
+                "City": location,
                 "Weather": weather,
                 "Temperature": temp
             }
