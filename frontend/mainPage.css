@@ -74,11 +74,9 @@ Pink: #e65e8b
 .main{
     padding: 2em 3em;
     background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0 , 0.7);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: none;
     color: black;
     display: flex;
     justify-content: space-between;
@@ -89,6 +87,7 @@ Pink: #e65e8b
 }
 
 .details{
+
     display:flex;
     justify-content: space-between;
     align-items: center;
