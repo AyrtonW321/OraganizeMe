@@ -12,9 +12,10 @@ SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
 def giveOutput():
   creds = None
+
   if os.path.exists("token.json"):
     creds = Credentials.from_authorized_user_file("token.json", SCOPES)
-  # If there are no (valid) credentials available, let the user log in.
+
   if not creds or not creds.valid:
     if creds and creds.expired and creds.refresh_token:
       creds.refresh(Request())
@@ -23,47 +24,35 @@ def giveOutput():
           "credentials.json", SCOPES
       )
       creds = flow.run_local_server(port=0)
-    # Save the credentials for the next run
+
     with open("token.json", "w") as token:
       token.write(creds.to_json())
 
   try:
     service = build("calendar", "v3", credentials=creds)
 
-    # Call the Calendar API
-    now = datetime.datetime.utcnow().isoformat() + "Z"
+    now = datetime.datetime.now().isoformat() + "Z"
 
-    # Grabs the top 10 events
-    events_result = (
-      service.events()
-      .list(
-        calendarId = 'primary', 
-        timeMin = now, maxResults = 10, 
-        singleEvents = True, 
-        orderBy = "startTime"
-      )
-      .execute()
-    )
-
+    events_result = service.events().list(calendarId = "primary", timeMin = now, maxResults = 10, singleEvents = True, orderBy = "startTime").execute()
     events = events_result.get("items", [])
 
     if not events:
       print("No upcoming events found.")
       return
 
-    # Prints the start and names of the next 10 events
     for event in events:
-      start = event["start"].get("dateTime", event[start].get("date"))
-      print(start, event["summary"])
+      start = event['start'].get('dateTime', event['start'].get("date"))
+      end = event['end'].get('dateTime', event['end'].get("date"))
+      print(start, end, event["summary"])
 
   except HttpError as error:
     print(f"An error occurred: {error}")
 
-def needInput():
+def needInput(event):
   creds = None
   if os.path.exists("token.json"):
     creds = Credentials.from_authorized_user_file("token.json", SCOPES)
-  # If there are no (valid) credentials available, let the user log in.
+
   if not creds or not creds.valid:
     if creds and creds.expired and creds.refresh_token:
       creds.refresh(Request())
@@ -72,7 +61,7 @@ def needInput():
           "credentials.json", SCOPES
       )
       creds = flow.run_local_server(port=0)
-    # Save the credentials for the next run
+
     with open("token.json", "w") as token:
       token.write(creds.to_json())
 
@@ -80,21 +69,28 @@ def needInput():
     service = build("calendar", "v3", credentials=creds)
 
     # Adds events to the calendar
-    event = {
-      'summary': '',
-      'location': '',
-      'description': '',
-      'start': {
-        'dateTime': '',
-        'timeZone': '',
-      },
-      'end': {
-        'dateTime': '',
-        'timeZone': '',
-      }
-    }
     event = service.events().insert(calendarId = 'primary', body=event).execute()
     print('Event created: %s' % (event.get('htmlLink')))
   
   except HttpError as error:
     print(f"An error occurred: {error}")
+
+
+#Example input format
+event = {
+      'summary': 'Hackathon',
+      'description': 'Hackathon',
+      'start': {
+        'dateTime': '2024-04-18T12:30:00Z',
+        'timeZone': 'America/Toronto',
+      },
+      'end': {
+        'dateTime': '2024-04-18T13:30:00Z',
+        'timeZone': 'America/Toronto',
+      }
+    }
+
+giveOutput()
+
+# Enable Google Calendar API
+# Create OAuth
