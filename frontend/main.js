@@ -1,7 +1,5 @@
 'use strict'
 
-const form = document.querySelector('form');
-
 const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('lastName');
 const emailInput = document.getElementById('email');
@@ -17,6 +15,8 @@ termsCheckbox.addEventListener('change', () => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    
+    console.log('Information Submitted')
 
     const firstName = firstNameInput.value.trim();
     const lastName = lastNameInput.value.trim();
