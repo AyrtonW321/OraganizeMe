@@ -1,8 +1,8 @@
 <?php
 // Server Id
 $servername = "192.168.20.145"; // could be derek@192.168.20.145
-$username = "derek@localhost";
-$password = "password";
+$username_s = "derek@localhost";
+$password_s = "password";
 $database = "hackathon1";
 
 // Values
@@ -12,7 +12,7 @@ $password = $_POST['password'];
 $email = $_POST['email'];
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username_s, $password_s, $database);
 
 // Check connection
 if ($conn->connect_error) {
@@ -34,4 +34,3 @@ else {
 
 // done
 $conn->close();
-?>
