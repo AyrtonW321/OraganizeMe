@@ -1,2 +1,2 @@
-# YRHacks-2024
+# OrganiseMe
 YRHacks 2024 repository. 
