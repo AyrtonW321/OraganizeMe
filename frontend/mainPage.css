@@ -227,4 +227,126 @@ Pink: #e65e8b
 .displays{
     display: flex;
     justify-content: space-between;
-  }
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.timeline-page {
+    margin: 0;
+    padding: 0;
+    font-family: "Inconsolata", monospace;
+    box-sizing: border-box;
+    background: #2e364a;
+}
+
+.timeline-page button {
+    background: #fff;
+    padding: 30px 200px;
+    border-radius: 25px;
+    font-size: 20px;
+    translate: 60px 350px;
+}
+
+.left-container {
+    position: fixed;
+    color: #fff;
+    font-size: 30px;
+    translate: 45px 100px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    animation: moveline 5s linear forwards;
+}
+
+@keyframes moveline {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.right-container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+
+@keyframes movedown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.right-container:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.right-container:nth-child(2) {
+    animation-delay: 1s;
+}
+.right-container:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.right-container:nth-child(4) {
+    animation-delay: 2s;
+}
+.right-container:nth-child(5) {
+    animation-delay: 2.5s;
+}
+.right-container:nth-child(6) {
+    animation-delay: 3s;
+}
+.right-container:nth-child(7) {
+    animation-delay: 3.5s;
+}
+.right-container:nth-child(8) {
+    animation-delay: 4s;
+}
+.right-container:nth-child(9) {
+    animation-delay: 4.5s;
+}
+
+.text-box {
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+    translate: 620px 0px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #000;
+    text-align: center;
+    background: #fff;
+    translate: -125px 0px;
+}

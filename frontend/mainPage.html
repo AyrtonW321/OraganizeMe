@@ -1,54 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>OrganizeMe</title>
-        <link rel="stylesheet" href="mainPage.css">
-    </head>
-    <body>
-        <div class="container">
-            <img src="/images/logo.png" class="logo" alt="logo">
-            <div class="navBar">
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Wallet</a></li>
-                    <li><a href="#">My Calendar</a></li>
-                    <li><a href="#">My Wellness</a></li>
-                    <li><a href="#">My Account</a></li>
-                </ul>
-            </div>
-        
-            <div class="clock">
-                <div class="main">
-                    <h1 class="time">08:37</h1>
-                    <div class="details">
-                        <h3 class="ampm">PM</h3>
-                        <h3 class="sec">20</h3>
-                    </div>
-                    <h2 class="date">
-                        <span class="month">Mar</span>
-                        <span class="dayofweek">Sunday</span>
-                        <span class="day">6</span>
-                    </h2>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrganizeMe</title>
+    <link rel="stylesheet" href="mainPage.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="/images/logo.png" class="logo" alt="logo">
+        <div class="navBar">
+            <ul>
+                <li><a id="dashboard">Dashboard</a></li>
+                <li><a id="wallet">Wallet</a></li>
+                <li><a id="calendar">My Calendar</a></li>
+                <li><a id="timeline">My Timeline</a></li>
+                <li><a id="account">My Account</a></li>
+            </ul>
+        </div>
+
+        <div class="clock" id="clock">
+            <div class="main">
+                <h1 class="time">08:37</h1>
+                <div class="details">
+                    <h3 class="ampm">PM</h3>
+                    <h3 class="sec">20</h3>
                 </div>
+                <h2 class="date">
+                    <span class="month">Mar</span>
+                    <span class="dayofweek">Sunday</span>
+                    <span class="day">6</span>
+                </h2>
             </div>
-        <div class="displays">
+        </div>
+        <div class="displays" id="displays">
             <div class="weatherDisplay">
                 <h1>Weather</h1>
                 <input type="text" id="weather" placeholder="Location (City, Country)">
-                <button type="submit" class="btn" id="enter" onclick="findweatheroflocation()">Enter</button>
+                <button type="submit" id="enter" onclick="findweatheroflocation()">Enter</button>
+            </div>
+            
+            <div class = "displayWeatherResult" id = "displayWeatherResult">
+                <div class = ""></div>
+            </div>
+            <div class = "toDoDisplay">
+                <h1>To Do List:</h1>
+                <form></form>
             </div>
             <div class="calendarDisplay">
-                <label for = "calender">Enter Prompt for Calendar: </label>
-            <input type = "text" id = "calender" placeholder = "Ex: I have a doctors appointment in one hour">
-            <button type = "submit" id = "submit" onclick = "">Submit Prompt</button>
+                <label for="calender">Enter Prompt for Calendar: </label>
+                <input type="text" id="calender" placeholder="Ex: I have a doctors appointment in one hour">
+                <button type="submit" id="submit" onclick="">Submit Prompt</button>
             </div>
         </div>
-            
+
+        <div class = "timeline-page" id="timelinePage">
+            <div class = "left-container">
+                <h1>Welcome to your</h1>
+                <h1>Timeline</h1>
+                <button type = "button" id = "backButton" class = "backButton">
+                    Exit
+                </button>
+            </div>
+            <div class = "timeline">
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>0</h2>
+                        </div>
+    
+                        <p>You are born.</p>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>10</h2>
+                        </div>
+                        <input type = "checkbox" id = "bike" name = "bike">
+                        <label for = "bike">Learn how to Bike</label>
+                        <p></p>
+                        <input type = "checkbox" id = "swim" name = "swim">
+                        <label for = "swim">Learn how to Swim</label>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>14</h2>
+                        </div>
+                        <input type = "checkbox" id = "graduateElementary" name = "graduateElementary">
+                        <label for = "graduateElementary">Graduate Elementary</label>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>16</h2>
+                        </div>
+                        <input type = "checkbox" id = "driversLicenseG1" name = "driversLicenseG1">
+                        <label for = "driversLicenseG1">Get G1</label>
+                        <p></p>
+                        <input type = "checkbox" id = "firstJob" name = "firstJob">
+                        <label for = "firstJob">Get your first job</label>
+                        <p></p>
+                        <input type = "checkbox" id = "firstHackathon" name = "firstHackathon">
+                        <label for = "firstHackathon">Participate in your first Hackathon</label>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>19</h2>
+                        </div>
+                        <input type = "checkbox" id = "driversLicense" name = "driversLicense">
+                        <label for = "driversLicense">Get Drivers License</label>
+                        <p></p>
+                        <input type = "checkbox" id = "attendIntoUniCollege" name = "attendIntoUniCollege">
+                        <label for = "attendIntoUniCollege">Attend Into University</label>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>24</h2>
+                        </div>
+                        <input type = "checkbox" id = "graduateUniversity" name = "graduateUniversity">
+                        <label for = "graduateUniversity">Graduate University</label>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>30</h2>
+                        </div>
+                        <input type = "checkbox" id = "married" name = "married">
+                        <label for = "married">Get Married</label>
+                        <p></p>
+                        <input type = "checkbox" id = "firstHouse" name = "firstHouse">
+                        <label for = "firstHouse">Get your first house</label>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>65</h2>
+                        </div>
+                        <input type = "checkbox" id = "retire" name = "retire">
+                        <label for = "retire">Retire</label>
+                    </div>
+                </div>
+                <div class = "right-container">
+                    <div class = "text-box">
+                        <div class = "circle">
+                            <h2>100</h2>
+                        </div>
+                        <p>You are probably dead by then.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <script src = "applicationrequests.js"></script>
-        
-    </body>
+
+    </div>
+
+    <script src="applicationrequests.js"></script>
+
+</body>
+
 </html>
