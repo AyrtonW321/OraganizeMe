@@ -13,5 +13,3 @@ for app in supported:
     print(current_mod)
     modules[app] = current_mod
 
-print(modules)
-print(modules[supported[0]])

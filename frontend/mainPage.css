@@ -122,6 +122,10 @@ Pink: #e65e8b
     }
 }
 
+.displayWeatherResult {
+    display: flex;
+}
+
 .weatherDisplay {
     width: 200px;
     background: rgb(255, 255, 255, 0.3);
@@ -133,14 +137,14 @@ Pink: #e65e8b
     display: block;
 }
 
-.weatherDisplay h1{
+.weatherDisplay h1 {
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
     color: black;
 }
 
-.weatherDisplay input{
+.weatherDisplay input {
     width: 100%;
     height: 40px;
     background: transparent;
@@ -152,11 +156,11 @@ Pink: #e65e8b
     color: black;
 }
 
-.weatherDisplay input::placeholder{
+.weatherDisplay input::placeholder {
     font-size: 13px;
 }
 
-.weatherDisplay button{
+.weatherDisplay button {
     width: 100%;
     height: 45px;
     background: lightgreen;
@@ -170,7 +174,7 @@ Pink: #e65e8b
     cursor: pointer;
 }
 
-.calendarDisplay{
+.calendarDisplay {
     width: 200px;
     background: rgb(255, 255, 255, 0.3);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -181,7 +185,7 @@ Pink: #e65e8b
     display: block;
 }
 
-.calendarDisplay button{
+.calendarDisplay button {
     width: 100%;
     height: 45px;
     background: lightgreen;
@@ -195,7 +199,7 @@ Pink: #e65e8b
     cursor: pointer;
 }
 
-.calendarDisplay label{
+.calendarDisplay label {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -203,7 +207,7 @@ Pink: #e65e8b
     color: black;
 }
 
-.calendarDisplay input{
+.calendarDisplay input {
     width: 100%;
     height: 40px;
     background: transparent;
@@ -216,15 +220,15 @@ Pink: #e65e8b
     color: black;
 }
 
-.calendarDisplay input::placeholder{
+.calendarDisplay input::placeholder {
     font-size: 5px;
 }
 
-.calendarDisplay input::placeholder{
+.calendarDisplay input::placeholder {
     font-size: 13px;
 }
 
-.displays{
+.displays {
     display: flex;
     justify-content: space-between;
     margin-left: 50px;
@@ -276,6 +280,7 @@ Pink: #e65e8b
     0% {
         height: 0;
     }
+
     100% {
         height: 100%;
     }
@@ -294,6 +299,7 @@ Pink: #e65e8b
         opacity: 1;
         transform: translateY(-30px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0px);
@@ -307,6 +313,7 @@ Pink: #e65e8b
 .right-container:nth-child(2) {
     animation-delay: 1s;
 }
+
 .right-container:nth-child(3) {
     animation-delay: 1.5s;
 }
@@ -314,18 +321,23 @@ Pink: #e65e8b
 .right-container:nth-child(4) {
     animation-delay: 2s;
 }
+
 .right-container:nth-child(5) {
     animation-delay: 2.5s;
 }
+
 .right-container:nth-child(6) {
     animation-delay: 3s;
 }
+
 .right-container:nth-child(7) {
     animation-delay: 3.5s;
 }
+
 .right-container:nth-child(8) {
     animation-delay: 4s;
 }
+
 .right-container:nth-child(9) {
     animation-delay: 4.5s;
 }
@@ -349,4 +361,45 @@ Pink: #e65e8b
     text-align: center;
     background: #fff;
     translate: -125px 0px;
+}
+
+#tasks-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+#tasks-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.task-item input {
+    width: 80%;
+    border: 1px solid #ddd;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.task-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.task-item label {
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #aaa;
 }

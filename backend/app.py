@@ -4,16 +4,18 @@ import dataAPICollector
 app = Flask(__name__)
 CORS(app)
 
+# windows download
+# python -m venv myenv
+
+#myenv\Scripts\activate
+
 # python backend\app.py
-# type in temrianl to satrt server
+# type in terminal to satrt server
 
 @app.route('/data')
 def get_data():
-    print('hi')
     module = request.args.get('module')
-    print(module)
     input_value = request.args.get('input')
-    print(input_value)
     data = dataAPICollector.callmodule(module, input_value)
     if data is None:
         # Return a 404 error response if data is not found
