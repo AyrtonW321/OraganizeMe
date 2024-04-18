@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,34 +9,42 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     </head>
+
     <body>
-        <form action="login.php" method = "post">
-            <h1>Registration</h1>
+        <div class="container">
+            <form action="login.php" method="post">
+                <h1>Registration</h1>
 
-            <div class="inputBox">
-                <div class="input">
-                    <input type="text" placeholder="Full Name" required>
-                    <i class='bx bxs-user'></i>
+                <div class="inputBox">
+                    <div class="input">
+                        <input type="text" placeholder="First Name" id="firstName" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="Last Name" id="lastName" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input">
+                        <input type="email" placeholder="Email" id="email" required>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    <div class="input">
+                        <input type="password" placeholder="Password" id="password" required>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
                 </div>
-                <div class="input">
-                    <input type="email" placeholder="Email" required>
-                    <i class='bx bxs-envelope' ></i>
-                </div>
-                <div class="input">
-                    <input type="password" placeholder="Password" required id = "password" name = "password">
-                    <i class='bx bxs-lock-alt' ></i>
-                </div>
-            </div>
 
-            <label>
-                <input type="checkbox">By proceeding, I accept the terms and conditions.
-            </label>
+                <label>
+                    <input type="checkbox">By proceeding, I accept the terms and conditions.
+                </label>
 
-            <button type="submit" class="btn">
-                Register
-            </button>
+                <button type="submit" class="btn" id="check">
+                    Register
+                </button>
 
-        </form>
-        <script src = "script.js"></script>
+            </form>
+        </div>
+        <script src = "main.js"></script>
     </body>
+
 </html>
