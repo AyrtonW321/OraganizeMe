@@ -13,7 +13,7 @@
     <body>
         <div class="loginPage"> 
             <h1>Welcome to OrganizeMe</h1>
-            <form id="signInForm" action="/login">
+            <form class="form" id="signInForm" action="/login">
                 <div class="inputBox">
                     <input type = "" placeholder="Username" id = "username" autocomplete="off" required>
                     <i class='bx bxs-user'></i>
@@ -32,6 +32,15 @@
                 <button type = "submit" class="btn" onclick = "">
                     Sign In
                 </button>
+
+                <div class="register">
+                    <p>Don't have an account? 
+                        <a href="#">
+                            Register
+                        </a>
+                    </p>
+                </div>
+                
             </form>
         </div>
         <script src="script.js"></script>

@@ -96,3 +96,19 @@ body{
     color: black;
     font-weight: 600;
 }
+
+.loginPage .register{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register p a:hover{
+    text-decoration: underline;
+}

@@ -29,8 +29,7 @@ def accessjsonfile(application, token, apiurl):
 
   # updates / adds usersdata to the overall data
   userdata.data[application] = jsondata
-
+  print(userdata.data)
   return (application + "data was updated to the user")
-
 
 
