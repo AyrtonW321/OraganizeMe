@@ -19,17 +19,20 @@ Pink: #e65e8b
 
 .navBar{
     width: 100%;
+    height: 75px;
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #FFFAFA;
+    justify-content: center;
+    background-color: #dbf1ff;
+    border-bottom: 2px solid black;
 }
 
 .logo{
     width: 100px;
-    position: relative;
-    left: 50px;
+    position:absolute;
+    top:-10px;
+    left: 0px;
     cursor: pointer;
 }
 
@@ -44,6 +47,7 @@ Pink: #e65e8b
     text-decoration: none;
     color: #0d2147;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .navBar ul li::after{
@@ -60,3 +64,62 @@ Pink: #e65e8b
 .navBar ul li:hover::after{
     width: 100%;
 }
+
+.clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    padding: 2em 3em;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0 , 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    position: relative;
+    padding-bottom: 5em;
+}
+
+.details{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.time{
+    font-size: 4em;
+}
+
+.date{
+    font-weight: 400;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+}
+
+@media screen and (min-width: 1000px){
+    .time{
+        font-size: 6em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .clock {
+        font-size:13px;
+    }
+}
+
