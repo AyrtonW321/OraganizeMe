@@ -1,13 +1,16 @@
-supported = {
+supported = [
     'weather',
     'calender'
-}
+]
 
 modules = {
 
 }
 
-for i in supported:
-    currentMod = '../'+supported[i]+'/'+supported+'API.py'
+i = 0
+for apps in supported:
+    currentMod = '../'+supported[i]+'/'+supported[i]+'API.py'
     modules[supported[i]] = currentMod
+    i += 1
 
+print(modules)

@@ -2,7 +2,7 @@ import importlib.util
 import sys
 import string
 
-import supportedapis
+from backend import supportedapis
 
 def callmodule(moduleNeeded, input):
 
