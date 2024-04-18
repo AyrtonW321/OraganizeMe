@@ -17,7 +17,6 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(34,193,195);
     background: linear-gradient(63deg, rgba(34,193,195,1) 0%, rgba(253,45,252,1) 100%);
 }
 
@@ -70,6 +69,9 @@ body{
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
 }
 
 .inputBox input::placeholder{
@@ -81,29 +83,21 @@ body{
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 20px;
 }
 
-label{
-    display: block;
-    margin-bottom: 5px;
+.loginPage .forget{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
 }
 
-button{
-    display: block;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    height: 30px;
-    background-color: #0077b6;
-    color: #fffafa;
-    cursor: pointer;
+.remember-forgot label input{
+    accent-color: #fff;
+    margin-right: 3px;
 }
 
-button:hover{
-    opacity: 0.8;
-}
-
-a{
-    color: #0077b6;
-    text-decoration: none;
+.remember-forgot a{
+    color: #fff
 }
