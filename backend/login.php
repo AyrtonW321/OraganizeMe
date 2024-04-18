@@ -8,7 +8,7 @@ $database: "hackathon1"
 // Values
 $formID = $_POST['form_id']
 $username = $_POST['username'];
-$lastName = $_POST['password'];
+$password = $_POST['password'];
 $email = $_POST['email'];
 
 // Create connection
@@ -20,12 +20,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($formID == 'login'){
+if (isset($formID["login"])){
 	// its a login
 
-}
+}	
 else {
-
+	// Registration
+	$stmt = $conn->prepare("insert into registration(username, password, email)
+	values(?, ?, ?)");
+	$stmt->bind_param("sss", $username, $password, $email);
+	$execval = $stmt->execute();
 }
 
 // done
