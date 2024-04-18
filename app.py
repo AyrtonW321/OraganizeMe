@@ -5,6 +5,12 @@ from backend import dataAPICollector
 app = Flask(__name__)
 CORS(app)
 
+# On Windows
+# venv\Scripts\activate
+# On macOS/Linux
+# source venv/bin/activate
+
+# python app.py to start server
 
 @app.route('/data', methods=['GET'])
 def get_data():
