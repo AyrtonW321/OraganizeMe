@@ -33,14 +33,19 @@
                     </h2>
                 </div>
             </div>
-
-            <label for="weather">Enter Location (City, Country): </label>
-            <input type="text" id="weather" placeholder="Location">
-            <button type="submit" class="btn" id="enter" onclick="findweatheroflocation()">Enter</button>
-
-            <label for = "calender">Enter Prompt for Calendar: </label>
+        <div class="displays">
+            <div class="weatherDisplay">
+                <h1>Weather</h1>
+                <input type="text" id="weather" placeholder="Location (City, Country)">
+                <button type="submit" class="btn" id="enter" onclick="findweatheroflocation()">Enter</button>
+            </div>
+            <div class="calendarDisplay">
+                <label for = "calender">Enter Prompt for Calendar: </label>
             <input type = "text" id = "calender" placeholder = "Ex: I have a doctors appointment in one hour">
             <button type = "submit" id = "submit" onclick = "">Submit Prompt</button>
+            </div>
+        </div>
+            
         </div>
         
         <script src = "applicationrequests.js"></script>

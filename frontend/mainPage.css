@@ -8,16 +8,16 @@ Pink: #e65e8b
 * {
     margin: 0;
     padding: 0;
-    font-family: Montserrat,sans-serif;
+    font-family: Montserrat, sans-serif;
 }
 
-.container{
+.container {
     width: 100%;
     height: 100vh;
     background-color: #FFFAFA;
 }
 
-.navBar{
+.navBar {
     width: 100%;
     height: 75px;
     margin: auto;
@@ -28,29 +28,29 @@ Pink: #e65e8b
     border-bottom: 2px solid black;
 }
 
-.logo{
+.logo {
     width: 100px;
-    position:absolute;
-    top:-10px;
+    position: absolute;
+    top: -10px;
     left: 0px;
     cursor: pointer;
 }
 
-.navBar ul li{
+.navBar ul li {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     position: relative;
 }
 
-.navBar ul li a{
+.navBar ul li a {
     text-decoration: none;
     color: #0d2147;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.navBar ul li::after{
+.navBar ul li::after {
     content: '';
     height: 3px;
     width: 0;
@@ -61,17 +61,17 @@ Pink: #e65e8b
     transition: 0.5s;
 }
 
-.navBar ul li:hover::after{
+.navBar ul li:hover::after {
     width: 100%;
 }
 
-.clock{
+.clock {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main{
+.main {
     padding: 2em 3em;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(4px);
@@ -86,20 +86,20 @@ Pink: #e65e8b
     padding-bottom: 5em;
 }
 
-.details{
+.details {
 
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     gap: 2em;
 }
 
-.time{
+.time {
     font-size: 4em;
 }
 
-.date{
+.date {
     font-weight: 400;
     position: absolute;
     bottom: 0;
@@ -110,15 +110,121 @@ Pink: #e65e8b
     text-align: center;
 }
 
-@media screen and (min-width: 1000px){
-    .time{
+@media screen and (min-width: 1000px) {
+    .time {
         font-size: 6em;
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
     .clock {
-        font-size:13px;
+        font-size: 13px;
     }
 }
 
+.weatherDisplay {
+    width: 200px;
+    background: rgb(255, 255, 255, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1px 20px 15px;
+    color: white;
+    display: block;
+}
+
+.weatherDisplay h1{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.weatherDisplay input{
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+    color: black;
+}
+
+.weatherDisplay input::placeholder{
+    font-size: 13px;
+}
+
+.weatherDisplay button{
+    width: 100%;
+    height: 45px;
+    background: lightgreen;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.calendarDisplay{
+    width: 200px;
+    background: rgb(255, 255, 255, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1px 20px 15px;
+    color: Black;
+    display: block;
+}
+
+.calendarDisplay button{
+    width: 100%;
+    height: 45px;
+    background: lightgreen;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.calendarDisplay label{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.calendarDisplay input{
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: black;
+}
+
+.calendarDisplay input::placeholder{
+    font-size: 5px;
+}
+
+.calendarDisplay input::placeholder{
+    font-size: 13px;
+}
+
+.displays{
+    display: flex;
+    justify-content: space-between;
+  }

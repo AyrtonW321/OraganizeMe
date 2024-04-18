@@ -3,11 +3,13 @@
 const url = 'http://127.0.0.1:5000/data'
   
 function fetchAPIs(modulePara, input){
-    console.log(input)
+    console.log(input);
     const params = new URLSearchParams();
     params.append('module', modulePara);
     params.append('input', input);
-    fetch(`${url}?${params}`)
+    const fullUrl = `${url}?${params.toString()}`; // Convert params to string
+
+    fetch(fullUrl)
     .then(response => {
         // Check if response is OK
         if (!response.ok) {
@@ -84,3 +86,4 @@ function calender() {
 
 updateTime();
 setInterval(updateTime, 1000); // Update clock every second
+

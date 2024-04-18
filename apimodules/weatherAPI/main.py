@@ -32,4 +32,4 @@ def giveOutput(location):
 # using user data (city, country) on account creation, use it for weather in lines 8 and 5
 
 if __name__ == "__main__":
-    giveOutput()
+    needInput()

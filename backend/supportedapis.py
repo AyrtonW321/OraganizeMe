@@ -1,16 +1,17 @@
 supported = [
     'weather',
-    'calender'
+    'calendar'
 ]
 
 modules = {
 
 }
 
-i = 0
-for apps in supported:
-    currentMod = '../'+supported[i]+'/'+supported[i]+'API.py'
-    modules[supported[i]] = currentMod
-    i += 1
+for app in supported:
+    print(app)
+    current_mod = '{app}API'  # Add a slash between the parent directory and module name
+    print(current_mod)
+    modules[app] = current_mod
 
 print(modules)
+print(modules[supported[0]])
