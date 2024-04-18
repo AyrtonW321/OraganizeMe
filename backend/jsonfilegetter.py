@@ -1,6 +1,9 @@
+# uses the account token and api url to access users specific information
 import json
 import requests
+import userdata
 
+# creates an object to hold the token which becomes a json file object
 class jsonfilegrabber:
   def __init__(self, token):
     self.token = token
@@ -17,11 +20,17 @@ class jsonfilegrabber:
         print(f"An error occurred while fetching API configuration: {e}")
     return None
 
-def accessjsonfile(token, apiurl):
+# call this with the parameters to get a returned json data list
+def accessjsonfile(application, token, apiurl):
     
   filegrabber = jsonfilegrabber(token)
 
-  api_config = filegrabber.fetch_api_config(apiurl)
+  jsondata = filegrabber.fetch_api_config(apiurl)
+
+  # updates / adds usersdata to the overall data
+  userdata.data[application] = jsondata
+
+  return (application + "data was updated to the user")
 
 
 

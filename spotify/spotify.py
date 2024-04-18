@@ -1,7 +1,9 @@
 from dotenv import load_dotenv
 import os
 import base64
-from 
+from requests import post
+from backend import jsonfilegetter 
+import json
 
 load_dotenv()
 
@@ -20,4 +22,9 @@ def get_token():
     }
 
     data = {"grant-type": "client_credentials"}
-    result = post(url, headerrs=headers, data=data)
+    result = post(url, headers=headers, data=data)
+    json_result = json.loads(result.content)
+    token = json_result["access-token"]
+    jsonfile = jsonfilegetter.accjsonfile("spotify", token, url)
+
+    print(jsonfile)
