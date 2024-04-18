@@ -1,12 +1,12 @@
 <?php
 // Server Id
-$servername: "192.168.20.145", // could be derek@192.168.20.145
-$username: "derek@localhost",
-$password: "password",
-$database: "hackathon1"
+$servername = "192.168.20.145"; // could be derek@192.168.20.145
+$username = "derek@localhost";
+$password = "password";
+$database = "hackathon1";
 
 // Values
-$formID = $_POST['form_id']
+$formID = $_POST['form_id'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
