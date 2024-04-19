@@ -18,10 +18,13 @@ function fetchAPIs(modulePara, input) {
         // get response and store it in local storage
 
         return response.json()
+
+        return response.json()
     })
     .then(data => {
         // Handle JSON data
         console.log(data);
+        localStorage.setItem(input, data)
         localStorage.setItem(input, data)
     })
     .catch(error => {
@@ -69,6 +72,8 @@ function updateTime() {
 const userLocation = document.getElementById('weather');
 const cityDisplay = document.querySelector('.city')
 const weatherDisplay = document.querySelector('.displayWeather');
+const cityDisplay = document.querySelector('.city')
+const weatherDisplay = document.querySelector('.displayWeather');
 
 function findweatheroflocation() {
     const city = userLocation.value.trim();
@@ -107,8 +112,10 @@ document.getElementById("timeline").addEventListener("click", () => {
 
 document.getElementById("dashboard").addEventListener("click", () => {
     displays.style.display = "flex";
+    displays.style.display = "flex";
     clock.style.display = "flex";
     timelinePage.hidden = true;
+
 
 });
 

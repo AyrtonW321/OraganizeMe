@@ -4,8 +4,13 @@ import dataAPICollector
 app = Flask(__name__)
 CORS(app)
 
+# windows download
+# python -m venv myenv
+
+#myenv\Scripts\activate
+
 # python backend\app.py
-# type in temrianl to satrt server
+# type in terminal to satrt server
 
 @app.route('/data')
 def get_data():
